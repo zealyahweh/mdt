@@ -1,4 +1,4 @@
-# Yu-Gi-Oh! Master Duel 中文卡查
+# Yu-Gi-Oh! Master Duel 中文卡查 MDT
 
 Yu-Gi-Oh! Master Duel Translation Script
 
@@ -10,9 +10,11 @@ Yu-Gi-Oh! Master Duel Translation Script
 * 开源，你可以直接执行源代码并定制你自己的版本。
 * i18n，支持简体中文和繁体中文。
 * 高兼容性，点开即用，支持各种游戏内语言，最低可支持win7。
+* 一键导出Master Duel游戏卡组，兼容ygopro格式。
 * 可一键直达网页卡查和官方数据库。
+* 支持全屏置顶、无边框、半透明。
 
-![MDT](https://github.com/SkywalkerJi/mdt/raw/master/IMG/v0.2.3.png "MDT v0.2.3")
+![MDT](https://github.com/SkywalkerJi/mdt/raw/master/IMG/v0.2.5.png "MDT v0.2.5")
 
 ## Download
 
@@ -34,7 +36,7 @@ Yu-Gi-Oh! Master Duel Translation Script
 1. 打开游戏。
 2. 右键使用**管理员权限**运行`mdt.exe`。
 3. 在组卡界面点击一张卡。
-4. 右键可打开设置。繁体中文用户右键切换语言。
+4. 右键可打开更多功能。繁体中文用户右键切换语言。
 
 **使用预打包的CLI版本**
 
@@ -87,8 +89,6 @@ keep_on_top = 1
 ; gui窗口置顶 1置顶 0取消
 ui_lock = 0
 ; gui窗口ui锁定 1锁定 0取消
-show_all_info = 1
-; 1显示全部内容 0精简显示
 web_search = 1
 ; 1开启网页卡查 0关闭
 x_loc = 960
@@ -99,6 +99,12 @@ y_len = 600
 ; gui窗口大小
 locale = zh-CN
 ; zh-CN简体，zh-TW繁体
+borderless = 1
+; 无边框 1开启 0取消
+show_names = 1
+; 英日文卡名卡密 1开启 0取消
+show_types = 1
+; 卡片类型 1开启 0取消
 ```
 </details>
 
@@ -117,9 +123,9 @@ python mdt_cli.py
 
 **视频演示**
 
-*v0.2.3版本*
+*v0.2.5版本*
 
-[bilibili](https://www.bilibili.com/video/av978731073)   [Youtube](https://www.youtube.com/watch?v=YUNeiOCAd6M)
+[bilibili](https://www.bilibili.com/video/av636233915)   [Youtube](https://www.youtube.com/watch?v=ITXjWSsmEmc)
 
 *卡图反和谐补丁*
 
@@ -127,6 +133,10 @@ python mdt_cli.py
 
 <details>
    <summary>旧版演示</summary>
+
+*v0.2.3版本*
+
+[bilibili](https://www.bilibili.com/video/av978731073)   [Youtube](https://www.youtube.com/watch?v=YUNeiOCAd6M)
 
 *v0.2.1版本*
 
@@ -150,17 +160,45 @@ python mdt_cli.py
 
 <details>
    <summary>Q1：杀毒软件报告MDT有病毒？如何解决？</summary>
-确认你是从本页所列途径下载的版本那就是误报。源代码是公开的，不可能加入病毒，如果实在不放心可以直接执行源代码。
+  
+确认你是从本页所列途径下载的版本那就是误报。
+
+源代码是公开的，不可能加入病毒，如果实在不放心可以直接执行源代码。
+
+目前MDT以功能开发为主，不打算主动解决此问题，请直接添加信任。
 </details>
 
 <details>
    <summary>Q2：管理员权限开启后依然无法检测？点击后exe消失？提示没有权限？被杀毒软件拦截隔离？</summary>
-先确认你是从本页所列途径下载的版本。然后在你使用的杀毒软件以及Windows自带的安全系统里添加信任。
+
+先确认你是从本页所列途径下载的版本。
+
+然后在你使用的杀毒软件以及Windows自带的安全系统里添加信任。
 </details>
 
 <details>
    <summary>Q3：是否可以排位？是否会封号？</summary>
-不会。我第一赛季是白金1结算。另外这个游戏没有反作弊，从经济角度考虑一个99%依赖服务端的游戏根本必要进行检测，参考游戏王duel link。
+
+不会。我第一赛季是白金1结算。
+
+另外这个游戏没有反作弊，从经济角度考虑一个99%依赖服务端的游戏根本必要进行检测，参考游戏王duel link。
+
+</details>
+
+<details>
+   <summary>Q4：CLI版本是否还会进行后续开发？</summary>
+
+CLI版本在MDT v0.2.3版本进行拆分，拆分后对CLI版本只做基础可用性维护，原则上不再添加新功能。但欢迎PR。
+
+</details>
+
+<details>
+   <summary>Q5：使用MDT时需要注意什么？</summary>
+
+请遵循[GPLv3协议](https://github.com/SkywalkerJi/mdt/blob/master/LICENSE)。
+
+如果你参与我们的社区，请遵循[贡献者契约行为准则](https://github.com/SkywalkerJi/mdt/blob/master/CODE_OF_CONDUCT.md)。
+
 </details>
 
 ## Contributing
@@ -172,22 +210,31 @@ python mdt_cli.py
 如果你有错误报告、建议、想法，请随时通过以下方式联系开发者：
 
 * [issue](https://github.com/SkywalkerJi/mdt/issues/new)
-* [Telegram](https://t.me/KancolleRTA_bot)
-* [Twitter](https://twitter.com/Skywalker_Ji)
 * [NGA](https://bbs.nga.cn/read.php?tid=30415633)
 * [巴哈姆特](https://forum.gamer.com.tw/C.php?bsn=725&snA=54550&tnum=1)
 * [Q群 710144213](https://jq.qq.com/?_wv=1027&k=uyFt3qi0)
+* [Telegram](https://t.me/ygomasterduel)
+* [Twitter](https://twitter.com/Skywalker_Ji)
 * 或其他途径。
 
 ## Changelog
+
+*v0.2.5*
+* 支持masterduel卡组一键导出！由 @zealyahweh 贡献。可同时生成ygopro卡组`.ydk`格式和文本格式。
+* 拆分英日文卡名和卡类型显示选项，现在可以分别勾选“原始卡名”和“卡片类型”。
+* 主题配色改为暗色。
+* 添加无边框模式，可更好融入游戏。
+* 窗口整体可拖拽。
+* 右键添加关闭选项。
+* 鼠标悬停时添加右键提示。
+
+<details>
+   <summary>展开过往版本</summary>
 
 *v0.2.4*
 * 添加对繁体中文的i18n支持。右键可以切换语言。UI文本由 @ranke96 贡献，卡片翻译来自 @stillfiy0529 。
 * 针对重启游戏后无法检测的问题，可以右键重启检测。
 * 未查询到卡片的状态下不再唤起网页卡查。
-
-<details>
-   <summary>展开过往版本</summary>
 
 *v0.2.3*
 * 拆分GUI版本和CLI版本。
@@ -282,6 +329,10 @@ python mdt_cli.py
 ## License
 
 [GNU General Public License v3.0](https://github.com/SkywalkerJi/mdt/blob/master/LICENSE) 
+
+## Code of conduct
+
+[Contributor Covenant Code of Conduct](https://github.com/SkywalkerJi/mdt/blob/master/CODE_OF_CONDUCT.md)
 
 ## Disclaimers
 
