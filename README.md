@@ -2,6 +2,8 @@
 
 Yu-Gi-Oh! Master Duel Translation Script
 
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/releases/latest) [![GitHub all releases](https://img.shields.io/github/downloads/SkywalkerJi/mdt/total)](https://github.com/SkywalkerJi/mdt#download) [![GitHub forks](https://img.shields.io/github/forks/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/network) [![GitHub stars](https://img.shields.io/github/stars/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/stargazers) [![GitHub license](https://img.shields.io/github/license/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/blob/master/LICENSE) ![Chinese translation](https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91-100%25-green) ![GitHub top language](https://img.shields.io/github/languages/top/SkywalkerJi/mdt)
+
 * 自动切换，自动查卡，全面覆盖Deck、Duel、Solo、Replay模式。
 * 高正确性，除非卡片数据本身有错。
 * 超快识别速度，低于0.000001s。
@@ -18,11 +20,11 @@ Yu-Gi-Oh! Master Duel Translation Script
 
 ## Download
 
-你可以在[Releases](https://github.com/SkywalkerJi/mdt/releases/latest)下载预打包的MDT版本。
+你可以在[![GitHub release (latest by date)](https://img.shields.io/github/v/release/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/releases/latest)下载预打包的MDT版本。
 
 如果是Windows7系统请下载后缀`_win7`的版本，如果想使用CLI请下载`_CLI`的版本。
 
-中国大陆用户可在[此处下载](https://wwi.lanzouj.com/b0176jyjc) 密码:5j6f
+中国大陆用户可在[蓝奏云下载](https://wwi.lanzouj.com/b0176jyjc) 密码:5j6f
 
 你还可以在[Uncensor Patch](https://github.com/SkywalkerJi/mdt/releases/tag/v1.0.1-UncensorPatch)下载反和谐卡图补丁。
 
@@ -101,10 +103,14 @@ locale = zh-CN
 ; zh-CN简体，zh-TW繁体
 borderless = 1
 ; 无边框 1开启 0取消
-show_names = 1
-; 英日文卡名卡密 1开启 0取消
 show_types = 1
 ; 卡片类型 1开启 0取消
+show_en_name = 1
+; 英文卡名 1开启 0取消
+show_jp_name = 1
+; 日文卡名 1开启 0取消
+show_card_id = 1
+; 卡密显示 1开启 0取消
 ```
 </details>
 
@@ -125,11 +131,11 @@ python mdt_cli.py
 
 *v0.2.5版本*
 
-[bilibili](https://www.bilibili.com/video/av636233915)   [Youtube](https://www.youtube.com/watch?v=ITXjWSsmEmc)
+[![Video Views](https://bilistats.lonelyion.com/views?uid=2012479&style=social&label=BiliBili&format=short)](https://www.bilibili.com/video/av636233915)  [![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UC3kA_NGfQFHMMn-kja8GTFA?style=social&label=YouTube)](https://www.youtube.com/watch?v=ITXjWSsmEmc)
 
 *卡图反和谐补丁*
 
-[bilibili](https://www.bilibili.com/video/av765979539)   [Youtube](https://www.youtube.com/watch?v=ickw082Snwo)
+[![Video Views](https://bilistats.lonelyion.com/views?uid=2012479&style=social&label=BiliBili&format=short)](https://www.bilibili.com/video/av765979539)   [![YouTube Video Views](https://img.shields.io/youtube/views/ickw082Snwo?style=social&label=YouTube)](https://www.youtube.com/watch?v=ickw082Snwo)
 
 <details>
    <summary>旧版演示</summary>
@@ -163,9 +169,9 @@ python mdt_cli.py
   
 确认你是从本页所列途径下载的版本那就是误报。
 
-源代码是公开的，不可能加入病毒，如果实在不放心可以直接执行源代码。
+源代码是公开的，不可能加入病毒，如果实在不放心可以直接执行源代码。MDT在GitHub统计已经超过6k download，有足够多的人进行了源代码审查，没有出现过安全问题。
 
-目前MDT以功能开发为主，不打算主动解决此问题，请直接添加信任。
+目前MDT以功能开发为主，现阶段对抗杀毒软件需要大量的精力而且毫无必要。因此不打算主动解决此问题，请直接添加信任。
 </details>
 
 <details>
@@ -173,7 +179,9 @@ python mdt_cli.py
 
 先确认你是从本页所列途径下载的版本。
 
-然后在你使用的杀毒软件以及Windows自带的安全系统里添加信任。
+然后在你使用的杀毒软件以及Windows自带的安全系统里添加信任。参见Q1。
+
+不同的杀毒软件的安全策略不同，给出的隔离清除方式也不同，因此会导致各种奇怪的问题无法一一叙述。如果尝试后依然无法解决，请提交[issue](https://github.com/SkywalkerJi/mdt/issues/new)。
 </details>
 
 <details>
@@ -181,7 +189,9 @@ python mdt_cli.py
 
 不会。我第一赛季是白金1结算。
 
-另外这个游戏没有反作弊，从经济角度考虑一个99%依赖服务端的游戏根本必要进行检测，参考游戏王duel link。
+MDT以玩家数据安全为己任，不会在有风险情况下进行检测，目前Master duel游戏无法侦察MDT的读取行为，不需要担心。未来有机会可以加入CV引擎进行辅助，目前来说没有必要。
+
+另外这个游戏没有反作弊，从经济角度考虑一个99%依赖服务端的游戏根本没必要进行检测，参考游戏王duel link。
 
 </details>
 
@@ -199,6 +209,8 @@ CLI版本在MDT v0.2.3版本进行拆分，拆分后对CLI版本只做基础可�
 
 如果你参与我们的社区，请遵循[贡献者契约行为准则](https://github.com/SkywalkerJi/mdt/blob/master/CODE_OF_CONDUCT.md)。
 
+如果你喜欢MDT，请分享给你的朋友。
+
 </details>
 
 ## Contributing
@@ -214,10 +226,24 @@ CLI版本在MDT v0.2.3版本进行拆分，拆分后对CLI版本只做基础可�
 * [巴哈姆特](https://forum.gamer.com.tw/C.php?bsn=725&snA=54550&tnum=1)
 * [Q群 710144213](https://jq.qq.com/?_wv=1027&k=uyFt3qi0)
 * [Telegram](https://t.me/ygomasterduel)
-* [Twitter](https://twitter.com/Skywalker_Ji)
+* [![Twitter Follow](https://img.shields.io/twitter/follow/Skywalker_Ji?style=social&label=Follow)](https://twitter.com/Skywalker_Ji)
+* [![Followers](https://bilistats.lonelyion.com/followers?uid=2012479&style=social&format=short&label=BiliBili%20关注)](https://space.bilibili.com/2012479)
+* [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UC3kA_NGfQFHMMn-kja8GTFA?style=social)](https://www.youtube.com/channel/UC3kA_NGfQFHMMn-kja8GTFA?sub_confirmation=1)
 * 或其他途径。
 
 ## Changelog
+
+*v0.2.7*
+* 修复网页卡查设置不保存的bug。
+
+*v0.2.6*
+* 修复点击关闭后进程未结束的bug。
+* 修复不在deck界面时点击导出卡组会发生崩溃的bug。
+* 现在可以单独勾选英、日文卡名、卡密显示。
+* 修改文本“保存卡组”为“导出卡组”，避免混淆。
+
+<details>
+   <summary>展开过往版本</summary>
 
 *v0.2.5*
 * 支持masterduel卡组一键导出！由 @zealyahweh 贡献。可同时生成ygopro卡组`.ydk`格式和文本格式。
@@ -227,9 +253,6 @@ CLI版本在MDT v0.2.3版本进行拆分，拆分后对CLI版本只做基础可�
 * 窗口整体可拖拽。
 * 右键添加关闭选项。
 * 鼠标悬停时添加右键提示。
-
-<details>
-   <summary>展开过往版本</summary>
 
 *v0.2.4*
 * 添加对繁体中文的i18n支持。右键可以切换语言。UI文本由 @ranke96 贡献，卡片翻译来自 @stillfiy0529 。
